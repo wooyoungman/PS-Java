@@ -1,0 +1,54 @@
+package j1158;
+
+import java.util.*;
+
+public class Main {
+
+	// swap 함수
+	static void swap( int idx1, int idx2) {
+		int temp = x[idx1];
+		x[idx1]=x[idx2];
+		x[idx2]=temp;
+	}
+	
+	// 삽입 정렬 함수 (오름차순)
+	static void InsertionSort() {
+		for(int i=1;i<nx;i++)
+		{
+			int j;
+			int tmp=x[i];
+			for(j=i;j>0&&x[j-1]>tmp;j--) {
+				x[j]=x[j-1];
+			}
+			x[j]=tmp;
+			per_print();
+		}
+	}
+	// 출력 함수
+	static void per_print() {
+		for(int i=0;i<nx;i++) {
+			System.out.print(x[i]+" ");
+		}
+		System.out.println();
+	}
+	
+	static int nx;
+	static int[] x;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc= new Scanner(System.in);
+		
+
+		nx=sc.nextInt();
+		x = new int[nx];
+		
+		for(int i=0;i<nx;i++) {
+			x[i]=sc.nextInt();
+			}
+		InsertionSort();
+				
+	}
+
+}
