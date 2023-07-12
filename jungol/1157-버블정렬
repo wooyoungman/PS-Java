@@ -1,0 +1,55 @@
+package j1157;
+
+import java.util.*;
+
+public class Main {
+
+	// swap 함수
+	static void swap( int idx1, int idx2) {
+		int temp = x[idx1];
+		x[idx1]=x[idx2];
+		x[idx2]=temp;
+	}
+	
+	// 버블 정렬 함수 (오름차순)
+	static void bubbleSort() {
+		for(int i=0;i<nx-1;i++)
+		{
+			if(x[i]>x[i+1]) {
+			swap(i,i+1);
+			}
+		}
+	}
+	// 출력 함수
+	static void per_print() {
+		for(int i=0;i<nx;i++) {
+			System.out.print(x[i]+" ");
+		}
+		System.out.println();
+	}
+	
+	static int nx;
+	static int[] x;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc= new Scanner(System.in);
+		
+
+		nx=sc.nextInt();
+		x = new int[nx];
+		
+		for(int i=0;i<nx;i++) {
+			x[i]=sc.nextInt();
+			}
+		
+		for(int i=0;i<nx-1;i++)
+		{
+			bubbleSort();
+			per_print();
+		}
+				
+	}
+
+}
