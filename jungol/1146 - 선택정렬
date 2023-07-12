@@ -1,0 +1,55 @@
+package j1146;
+
+import java.util.*;
+
+public class Main {
+
+	static int nx;
+	static int[] x;
+	// swap 함수
+	static void swap( int idx1, int idx2) {
+		int temp = x[idx1];
+		x[idx1]=x[idx2];
+		x[idx2]=temp;
+	}
+	
+	// 선택 정렬 함수 (오름차순)
+	static void Selectionsort() {
+		for(int i=0;i<nx-1;i++)
+		{
+			int min=i;
+			for(int j=i+1;j<nx;j++) {
+				if(x[min]>x[j]) {
+					min=j;
+				}
+			}
+			swap(i,min);
+			per_print();
+		}
+	}
+	// 출력 함수
+	static void per_print() {
+		for(int i=0;i<nx;i++) {
+			System.out.print(x[i]+" ");
+		}
+		System.out.println();
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc= new Scanner(System.in);
+		
+
+		nx=sc.nextInt();
+		x = new int[nx];
+		
+		for(int i=0;i<nx;i++) {
+			x[i]=sc.nextInt();
+			}
+		
+		Selectionsort();
+				
+	}
+
+}
